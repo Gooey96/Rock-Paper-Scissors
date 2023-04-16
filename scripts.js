@@ -15,3 +15,18 @@ function getComputerChoice() {
         return choice3;
     }
 }
+
+//Getting player input
+function getPlayerChoice() {
+    const userInput = prompt("Choose between Rock, Paper or Scissors");
+
+//This code is making sure that the input will become case insensitive
+    const result = userInput.toLowerCase();
+    
+//This code is making sure that player give the right input
+    if (result === "rock" || result === "paper" || result === "scissors") {
+        console.log(`You choose: ${result}`);
+    }else {
+        alert("Error: Wrong choices")
+    }
+}
