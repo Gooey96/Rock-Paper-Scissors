@@ -1,8 +1,10 @@
+//Global variable for three choices
+let choice1 ="rock";
+let choice2 ="paper";
+let choice3 ="scissors";
+
 //Function that randomly select 3 option for the computer
 function getComputerChoice() { 
-    let choice1 ="rock";
-    let choice2 ="paper";
-    let choice3 ="scissors";
     const random =(Math.floor(Math.random() * 3) + 1);
 
     if (random <=1) {
