@@ -22,11 +22,28 @@ function getPlayerChoice() {
 
 //This code is making sure that the input will become case insensitive
     const result = userInput.toLowerCase();
-    
+
 //This code is making sure that player give the right input
     if (result === "rock" || result === "paper" || result === "scissors") {
-        console.log(`You choose: ${result}`);
+        return result;
     }else {
         alert("Error: Wrong choices")
     }
 }
+
+//This function is to play one round 
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        console.log("It's a tie");
+    }else if ("rock" === "scissors" || "scissors" === "paper" || "paper" === "rock") {
+        console.log("The Player have won");
+    }else if ("rock" === "paper" || "paper" === "scissors" || "scissor" === "rock") {
+        console.log("The Computer have won")
+    }else {
+        console.log("Help it's an error")
+    }
+}
+
+const playerSelection = getPlayerChoice();
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
