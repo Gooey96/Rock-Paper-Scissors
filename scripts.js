@@ -35,13 +35,19 @@ function getPlayerChoice() {
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log("It's a tie");
-    }else if ("rock" === "scissors" || "scissors" === "paper" || "paper" === "rock") {
-        console.log("The Player have won");
-    }else if ("rock" === "paper" || "paper" === "scissors" || "scissor" === "rock") {
-        console.log("The Computer have won")
-    }else {
-        console.log("Help it's an error")
-    }
+    }else if (
+     (playerSelection === "rock" && computerSelection === "scissors") || 
+     (playerSelection === "paper" && computerSelection === "rock") ||
+     (playerSelection === "scissors" && computerSelection === "paper")) {
+        console.log("The player have won");
+     }else if (
+      (playerSelection === "rock" && computerSelection === "paper") ||
+      (playerSelection === "paper" && computerSelection === "scissors") ||
+      (playerSelection === "scissor" && computerSelection === "rock")) {
+        console.log("The computer have won");
+      }else {
+        console.log("Something when wrong");
+      }
 }
 
 const playerSelection = getPlayerChoice();
