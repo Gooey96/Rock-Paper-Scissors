@@ -4,15 +4,19 @@ let choice2 ="paper";
 let choice3 ="scissors";
 
 //Function that randomly select 3 option for the computer
-function getComputerChoice() { 
+function getComputerChoice() {
     const random =(Math.floor(Math.random() * 3) + 1);
+    
+    console.log(`The computer have choose: ${choice1 || choice2 || choice3}`);
 
     if (random <=1) {
         return choice1;
     }else if (random <=2) {
         return choice2;
-    }else {
+    }else if (random <=3) {
         return choice3;
+    }else {
+        console.log("I dont know what when wrong");
     }
 }
 
@@ -22,6 +26,8 @@ function getPlayerChoice() {
 
 //This code is making sure that the input will become case insensitive
     const result = userInput.toLowerCase();
+
+    console.log(`The player have choose: ${result}`);
 
 //This code is making sure that player give the right input
     if (result === "rock" || result === "paper" || result === "scissors") {
