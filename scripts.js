@@ -5,8 +5,20 @@ let playerSelection = prompt("Choose between Rock, Paper or Scissors").toLowerCa
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log("It's a tie");
+    }else if(
+        (playerSelection === "rock" && computerSelection === "scissors") ||
+        (playerSelection === "paper" && computerSelection === "rock") ||
+        (playerSelection === "scissors" && computerSelection === "paper") 
+    ) {
+        console.log("The player have won");
+    }else if(
+        (playerSelection === "rock" && computerSelection === "paper") ||
+        (playerSelection === "paper" && computerSelection === "scissors") ||
+        (playerSelection === "scissors" && computerSelection === "rock") 
+    ) {
+        console.log("The computer have won");
     }else {
-        console.log("Hmmmmmmmm");
+        console.log("Hmmmmmm");
     }
 }
 
