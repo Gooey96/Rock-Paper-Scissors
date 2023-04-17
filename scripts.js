@@ -9,11 +9,11 @@ function getComputerChoice() {
     
     console.log(`The computer have choose: ${choice1 || choice2 || choice3}`);
 
-    if (random <=1) {
+    if (random ===1) {
         return choice1;
-    }else if (random <=2) {
+    }else if (random ===2) {
         return choice2;
-    }else if (random <=3) {
+    }else if (random ===3) {
         return choice3;
     }else {
         console.log("I dont know what when wrong");
@@ -25,7 +25,7 @@ function getPlayerChoice() {
     const userInput = prompt("Choose between Rock, Paper or Scissors");
 
 //This code is making sure that the input will become case insensitive
-    const result = userInput.toLowerCase();
+    let result = userInput.toLowerCase();
 
     console.log(`The player have choose: ${result}`);
 
@@ -44,18 +44,20 @@ function playRound(playerSelection, computerSelection) {
     }else if (
      (playerSelection === "rock" && computerSelection === "scissors") || 
      (playerSelection === "paper" && computerSelection === "rock") ||
-     (playerSelection === "scissors" && computerSelection === "paper")) {
+     (playerSelection === "scissors" && computerSelection === "paper")
+     ) {
         console.log("The player have won");
      }else if (
       (playerSelection === "rock" && computerSelection === "paper") ||
       (playerSelection === "paper" && computerSelection === "scissors") ||
-      (playerSelection === "scissor" && computerSelection === "rock")) {
+      (playerSelection === "scissor" && computerSelection === "rock")
+      ) {
         console.log("The computer have won");
       }else {
         console.log("Something when wrong");
       }
 }
 
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
+let playerSelection = getPlayerChoice();
+let computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
