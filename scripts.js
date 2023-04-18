@@ -1,7 +1,10 @@
 let choices = "";
 let computerSelection = getComputerChoice();
+
+//Getting the user input
 let playerSelection = prompt("Choose between Rock, Paper or Scissors").toLowerCase();
 
+//Function that play for a single round of rock, paper and scissors.
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log("It's a tie");
@@ -18,10 +21,11 @@ function playRound(playerSelection, computerSelection) {
     ) {
         console.log("The computer have won");
     }else {
-        console.log("Hmmmmmm");
+        console.log("Hey, Wrong input buddy.\nShould be between Rock, Paper and Scissors.");//Telling the player or user that their input is either wrong or misspelled.
     }
 }
 
+//Function that let the computer to randomly choose between 3 chooses.
 function getComputerChoice () {
     const randomChoices = (Math.floor(Math.random() * 3) + 1);
 
@@ -34,6 +38,11 @@ function getComputerChoice () {
     }
 }
 
+//Logging what the computer have chose.
 console.log(`The computer choose: ${computerSelection}`);
+
+//Logging what the player or user have chose.
 console.log(`The player choose: ${playerSelection}`)
+
+//Logging the result of the match.
 console.log(playRound(playerSelection, computerSelection));
