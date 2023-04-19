@@ -42,7 +42,7 @@ function getComputerChoice () {
 console.log(`The computer choose: ${computerSelection}`);
 
 //Logging what the player or user have chose.
-console.log(`The player choose: ${playerSelection}`)
+console.log(`The player choose: ${playerSelection}`);
 
 //Logging the result of the match.
 console.log(playRound(playerSelection, computerSelection));
