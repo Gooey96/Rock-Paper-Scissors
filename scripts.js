@@ -34,8 +34,6 @@ function getComputerChoice () {
     }
 }
 
-
-
 function game() {
     console.log("Welcome");
 
