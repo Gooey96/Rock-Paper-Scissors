@@ -40,7 +40,6 @@ function game() {
     console.log("Welcome");
 
     for(let i = 1; i <= 5; i++) {
-
         let computerSelection = getComputerChoice();
 
         //Getting the user input
