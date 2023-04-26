@@ -43,6 +43,8 @@ function game() {
         //Getting the user input
         let playerSelection = prompt("Choose between Rock, Paper or Scissors").toLowerCase();
 
+        console.log(`Round: ${i}, Fight!`);
+
         //Logging what the computer have chose.
         console.log(`The computer choose: ${computerSelection}`);
 
@@ -51,6 +53,8 @@ function game() {
 
         //Logging the result of the match.
         console.log(playRound(playerSelection, computerSelection));
+
+        console.log("-------------------------");
     }
 }
 
