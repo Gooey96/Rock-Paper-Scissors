@@ -1,3 +1,11 @@
+const option = ["rock", "paper", "scissors"]
+
+//Function that let the computer to randomly choose between 3 chooses.
+function getComputerChoice () {
+    const randomChoices = option[(Math.floor(Math.random() * option.length))];
+    return randomChoices;
+}
+
 //Function that play for a single round of rock, paper and scissors.
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
@@ -16,21 +24,6 @@ function playRound(playerSelection, computerSelection) {
         console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
     }else {
         console.log("Hey, Wrong input buddy.\nShould be between Rock, Paper and Scissors.");//Telling the player or user that their input is either wrong or misspelled.
-    }
-}
-
-//Function that let the computer to randomly choose between 3 chooses.
-function getComputerChoice () {
-    let choices = "";//Container
-
-    const randomChoices = (Math.floor(Math.random() * 3) + 1);
-
-    if (randomChoices <= 1) {
-       return choices = "rock";
-    }else if (randomChoices <= 2) {
-       return choices = "paper";
-    }else if (randomChoices <= 3) {
-       return choices = "scissors";
     }
 }
 
