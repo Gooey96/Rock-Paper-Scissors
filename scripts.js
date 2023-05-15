@@ -63,16 +63,18 @@ function game() {
         console.log(`Round: ${i}, Fight!`);
 
         //Logging what the computer have chose.
-        console.log(`The computer choose: ${computerSelection}`);
+        console.log(`The player choose: ${playerSelection}`);
 
         //Logging what the player or user have chose.
-        console.log(`The player choose: ${playerSelection}`);
+        console.log(`The computer choose: ${computerSelection}`);
 
         //Logging the result of the match.
         console.log(playRound(playerSelection, computerSelection));
 
         console.log("-------------------------");
     }
+
+    console.log("Game Over");
 }
 
 game();
