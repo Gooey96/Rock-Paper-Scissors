@@ -6,21 +6,35 @@ function getComputerChoice () {
     return randomChoices;
 }
 
-//Function that play for a single round of rock, paper and scissors.
-function playRound(playerSelection, computerSelection) {
+function checkWinner(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        console.log("It's a tie");
+        return "tie";
     }
     else if(
         (playerSelection === "rock" && computerSelection === "scissors") ||
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "scissors" && computerSelection === "paper") 
     ) {
-        console.log(`You won! ${playerSelection} beats ${computerSelection}`);
+        return "player";
     }
     else  {
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
-    }  
+        return "computer";
+    }
+}
+
+//Function that play for a single round of rock, paper and scissors.
+function playRound(playerSelection, computerSelection) {
+    const result = checkWinner(playerSelection, computerSelection);
+    
+    if (result === "tie") {
+        return "It's a tie";
+    }
+    else if(result === "player") {
+        return `You won! ${playerSelection} beats ${computerSelection}.`
+    }
+    else {
+        return `You lose! ${computerSelection} beats ${playerSelection}.`
+    }
 }
 
 function game() {
