@@ -73,7 +73,7 @@ function game() {
 
         console.log("-------------------------");
     }
-
+    
     console.log("Game Over");
 }
 
