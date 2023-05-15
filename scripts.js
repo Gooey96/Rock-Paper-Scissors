@@ -10,21 +10,17 @@ function getComputerChoice () {
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log("It's a tie");
-    }else if(
+    }
+    else if(
         (playerSelection === "rock" && computerSelection === "scissors") ||
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "scissors" && computerSelection === "paper") 
     ) {
         console.log(`You won! ${playerSelection} beats ${computerSelection}`);
-    }else if(
-        (playerSelection === "rock" && computerSelection === "paper") ||
-        (playerSelection === "paper" && computerSelection === "scissors") ||
-        (playerSelection === "scissors" && computerSelection === "rock") 
-    ) {
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
-    }else {
-        console.log("Hey, Wrong input buddy.\nShould be between Rock, Paper and Scissors.");//Telling the player or user that their input is either wrong or misspelled.
     }
+    else  {
+        console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+    }  
 }
 
 function game() {
