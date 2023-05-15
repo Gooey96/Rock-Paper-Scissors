@@ -1,9 +1,23 @@
 const option = ["rock", "paper", "scissors"]
 
 //Function that let the computer to randomly choose between 3 chooses.
-function getComputerChoice () {
+function getComputerChoice() {
     const randomChoices = option[(Math.floor(Math.random() * option.length))];
     return randomChoices;
+}
+
+function getPlayerChoice() {
+    let validatedInput = false;
+    while(validatedInput == false) {
+        const choices = prompt("Choose between Rock, Paper or Scissors").toLowerCase();
+        if(choices == null) {
+            continue;
+        }
+        if(option.includes(choices)) {
+            validatedInput = true;
+            return choices
+        }
+    }
 }
 
 function checkWinner(playerSelection, computerSelection) {
@@ -44,7 +58,7 @@ function game() {
         let computerSelection = getComputerChoice();
 
         //Getting the user input
-        let playerSelection = prompt("Choose between Rock, Paper or Scissors").toLowerCase();
+        let playerSelection = getPlayerChoice();
 
         console.log(`Round: ${i}, Fight!`);
 
