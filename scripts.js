@@ -1,4 +1,6 @@
 const option = ["rock", "paper", "scissors"]
+let playerScore = 0;
+let computerScore = 0;
 
 //Function that let the computer to randomly choose between 3 chooses.
 function getComputerChoice() {
@@ -67,12 +69,29 @@ function game() {
         //Logging what the computer or user have chose.
         console.log(`The computer choose: ${computerSelection}`);
 
-        //Logging the result of the match.
+        //Logging the result of each match.
         console.log(playRound(playerSelection, computerSelection));
 
         console.log("-------------------------");
+
+        if(checkWinner(playerSelection, computerSelection) === "player") {
+            playerScore++;
+        }
+        else if(checkWinner(playerSelection, computerSelection) === "computer") {
+            computerScore++;
+        }
     }
 
+    //Loggin the final result of all matches.
+    if(playerScore > computerScore) {
+        console.log("The player was the winner.");
+    }
+    else if(playerScore < computerScore) {
+        console.log("The computer was the winner.")
+    }
+    else {
+        console.log("We have a tie.")
+    }
     console.log("Game Over");
 }
 
