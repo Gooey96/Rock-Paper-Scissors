@@ -6,6 +6,7 @@ function getComputerChoice() {
     return randomChoices;
 }
 
+//Getting the user input
 function getPlayerChoice() {
     let validatedInput = false;
     while(validatedInput == false) {
@@ -55,17 +56,15 @@ function game() {
     console.log("Welcome");
 
     for(let i = 1; i <= 5; i++) {
-        let computerSelection = getComputerChoice();
-
-        //Getting the user input
+        let computerSelection = getComputerChoice(); 
         let playerSelection = getPlayerChoice();
 
         console.log(`Round: ${i}, Fight!`);
 
-        //Logging what the computer have chose.
+        //Logging what the player have chose.
         console.log(`The player choose: ${playerSelection}`);
 
-        //Logging what the player or user have chose.
+        //Logging what the computer or user have chose.
         console.log(`The computer choose: ${computerSelection}`);
 
         //Logging the result of the match.
@@ -73,7 +72,7 @@ function game() {
 
         console.log("-------------------------");
     }
-    
+
     console.log("Game Over");
 }
 
