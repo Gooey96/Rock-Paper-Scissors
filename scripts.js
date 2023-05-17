@@ -1,8 +1,6 @@
 const buttons = document.querySelectorAll('button');
 let playerScore = 0;
 let computerScore = 0;
-const result = document.getElementById('#result');
-const para = document.createElement('p');
 
 //Function that get computer choices
 function getComputerChoices() {
@@ -10,12 +8,15 @@ function getComputerChoices() {
     return option[Math.floor(Math.random() * option.length)];
 }
 
+//Function that play rock, paper, scissors and tell who the winner is
 function playRound(playerSelection) {
     let computerSelection = getComputerChoices();
+    const result = document.querySelector('#result');
+    const para = document.createElement('p');
 
     if(playerSelection === computerSelection) {
         para.textContent = `It's a tie, Both of you choose ${playerSelection}.`;
-        result.append(para);//this is wrong
+        result.appendChild(para);
         console.log(para);
     }
     else if(
@@ -24,12 +25,12 @@ function playRound(playerSelection) {
         (playerSelection === "scissors" && computerSelection === "paper")
     ) {
         para.textContent = `You win! ${playerSelection} beats ${computerSelection}.`;
-        result.append(para);//this is wrong
+        result.appendChild(para);
         console.log(para);
     }
     else {
         para.textContent = `You lose! ${computerSelection} beats ${playerSelection}.`;
-        result.append(para);//this is wrong
+        result.appendChild(para);
         console.log(para);
     }
 }
